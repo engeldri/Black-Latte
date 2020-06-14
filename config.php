@@ -1,0 +1,29 @@
+<?php
+class ACLandingConfig {
+    const API_URL = 'https://api.adcombo.com/api/v2/order/create/';
+    const API_KEY = 'a84ae4f2682870d1941b2d2239181d5a';
+    const LOG_ENABLED = true;        // Log orders to orderlog.php
+    const GEOIP_ENABLED = true;      // Enable GeoIP detection
+    const DETECT_MOBILE = true;      // Enable mobile browser detection
+    // Pixel code. Multiline PHP variable.
+    const PIXEL_CODE = <<<EOV
+<!-- Taboola Pixel Code -->
+<script>
+    _tfa.push({notify: 'event', name: 'lead_blacklatte', id: 1279200});
+</script>
+<noscript>
+    <img src='https://trc.taboola.com/1279200/log/3/unip?en=lead_blacklatte'
+        width='0' height='0' style='display:none'/>
+</noscript>
+<!-- End of Taboola Pixel Code -->
+EOV;
+//     This is EXAMPLE of custom parameters. They will we added to order regardless of URL arguments\macros.
+//     You can use them with "clean" links and add specific parameters to order. They will NOT OVERWRITE link args.
+    const CUSTOM_PARAMS = array(
+       'subacc' => '',
+       'subacc2' => '',
+       'subacc3' => '',
+       'subacc4' => '',
+    );
+}
+?>
